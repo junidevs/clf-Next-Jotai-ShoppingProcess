@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Documents/GitHub/Autocomplete/.idea/Autocomplete.iml" filepath="$PROJECT_DIR$/../Documents/GitHub/Autocomplete/.idea/Autocomplete.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/clf-shopping.iml" filepath="$PROJECT_DIR$/.idea/clf-shopping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../develop/.idea/develop.iml" filepath="$PROJECT_DIR$/../develop/.idea/develop.iml" />
     </modules>
   </component>
 </project>
