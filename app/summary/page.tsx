@@ -7,13 +7,24 @@ import useAddressAtom from "@/atoms/addressAtom/useAddressAtom"
 import useShippingOptionsAtom from "@/atoms/shippingOptionsAtom/useShippingOptionsAtom"
 import usePaymentOption from "@/atoms/paymentAtom/usePaymentAtom"
 import ButtonOrLink from "@/components/atoms/ButtonOrLink"
+import usePostOrder from "@/hooks/mutations/usePostOrder/usePostOrder"
 
 const SummaryPage = () => {
   const { products } = useCheckoutAtom()
   const { address } = useAddressAtom()
   const { shippingOption } = useShippingOptionsAtom()
   const { paymentOption } = usePaymentOption()
-  console.log({ address })
+  const { mutate: order } = usePostOrder()
+  const handleOrder = () => {
+    order({
+      ...{
+        products,
+        address,
+        shippingOption,
+        paymentOption,
+      },
+    })
+  }
   return (
     <Stack
       sx={{
@@ -173,6 +184,7 @@ const SummaryPage = () => {
         <Typography>Selected payment option: {paymentOption}</Typography>
       </Stack>
       <ButtonOrLink
+        onClick={handleOrder}
         sx={{
           mt: 2,
           backgroundColor: "#3DBDA7",

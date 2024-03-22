@@ -1,7 +1,7 @@
 import { atomWithStorage } from "jotai/utils"
 import { useAtom } from "jotai"
 
-const persistedAtom = atomWithStorage<Partial<TPaymentMethods | null>>(
+const persistedAtom = atomWithStorage<TPaymentMethods | null>(
   "usePaymentOption",
   null
 )

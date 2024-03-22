@@ -28,6 +28,8 @@ declare global {
   type TShippingMethods = "UPS" | "INPOST"
 
   type TPaymentMethods = "BLIK" | "VISA" | "CRYPTO"
+
+  type ReturnPromiseTypes<T extends Promise> = Awaited<ReturnType<T>>
 }
 
 export {}
