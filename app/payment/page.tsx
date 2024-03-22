@@ -8,6 +8,7 @@ import { Typography } from "@mui/material"
 import ShippingForm from "@/components/organisms/ShippingForm/ShippingForm"
 import PaymentForm from "@/components/organisms/PamentForm/PamentForm"
 import useShippingOptionsAtom from "@/atoms/shippingOptionsAtom/useShippingOptionsAtom"
+import ButtonOrLink from "@/components/atoms/ButtonOrLink"
 
 const PaymentPage = () => {
   const {
@@ -37,44 +38,61 @@ const PaymentPage = () => {
   return (
     <Stack
       sx={{
-        flexDirection: "row",
         gap: 2,
         backgroundColor: "#121318",
         p: 5,
       }}
     >
-      <Stack>
-        <Typography
-          sx={{
-            fontSize: 18,
-            mb: 2,
-            color: "#fff",
-          }}
-        >
-          Select Shipping method
-        </Typography>
+      <Stack
+        sx={{
+          flexDirection: "row",
+          gap: 2,
+        }}
+      >
+        <Stack>
+          <Typography
+            sx={{
+              fontSize: 18,
+              mb: 2,
+              color: "#fff",
+            }}
+          >
+            Select Shipping method
+          </Typography>
 
-        <ShippingForm
-          defaultOption={country && shippingMap[country]}
-          options={["INPOST", "UPS"]}
-        />
-      </Stack>
-      <Stack>
-        <Typography
-          sx={{
-            fontSize: 18,
-            mb: 2,
-            color: "#fff",
-          }}
-        >
-          Select Payment method
-        </Typography>
+          <ShippingForm
+            defaultOption={country && shippingMap[country]}
+            options={["INPOST", "UPS"]}
+          />
+        </Stack>
+        <Stack>
+          <Typography
+            sx={{
+              fontSize: 18,
+              mb: 2,
+              color: "#fff",
+            }}
+          >
+            Select Payment method
+          </Typography>
 
-        <PaymentForm
-          defaultOption={paymentMap[country!]}
-          options={["BLIK", "VISA", "CRYPTO"]}
-        />
+          <PaymentForm
+            defaultOption={paymentMap[country!]}
+            options={["BLIK", "VISA", "CRYPTO"]}
+          />
+        </Stack>
       </Stack>
+      <ButtonOrLink
+        href="/summary"
+        disabled={paymentOption === null || shippingOption === null}
+        sx={{
+          mt: 2,
+          backgroundColor: "#3DBDA7",
+          color: "#fff",
+        }}
+      >
+        Summary
+      </ButtonOrLink>
     </Stack>
   )
 }
