@@ -31,7 +31,7 @@ const CheckoutPage = () => {
   const { products, handleRemoveProduct } = useCheckoutAtom()
   const { address } = useAddressAtom()
   const router = useRouter()
-  console.log({ address })
+
   const handleAddProduct = () => {
     setOpenAddProductModal((open) => !open)
   }

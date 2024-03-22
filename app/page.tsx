@@ -6,11 +6,8 @@ import { Typography } from "@mui/material"
 import useProducts from "@/hooks/queries/useProducts/useProducts"
 
 const HomePage = () => {
-  const { data, isLoading, isFetching, error } = useProducts()
-  console.log({ data })
+  const { data } = useProducts()
 
-  // if (isLoading || isFetching) return <Loader />
-  // if (error) return <Typography>Something went wrong</Typography>
   return (
     <Stack p={5}>
       <RootMenu />

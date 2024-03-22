@@ -16,7 +16,7 @@ const Card = (product: TProduct) => {
     avatarUrl,
     preDefBackground,
   } = product
-  console.log({ products })
+
   const handleAddToCard = () => {
     handleSetProduct(product)
   }

@@ -14,10 +14,11 @@ const PaymentPage = () => {
   const {
     address: { country },
   } = useAddressAtom()
+
   const router = useRouter()
   const { paymentOption } = usePaymentOption()
   const { shippingOption } = useShippingOptionsAtom()
-  console.log({ paymentOption, shippingOption })
+
   const shippingMap: TShippingMap = {
     Poland: "INPOST",
     USA: "UPS",
