@@ -82,3 +82,17 @@ These additions would significantly improve the reliability and maintainability 
 ```
 
 ### Thanks Damian !
+
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/5303f4f9-d03a-42d6-b952-ad1232b65703)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/3816f721-aaeb-41f2-ba73-a44c54aacec0)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/231d8590-c6a7-430c-9c8c-928a474612b6)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/199d2124-e435-46cd-afab-950269a8d088)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/1fe3a007-686d-4206-9155-8e74d048835d)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/7443020c-1b44-4c54-b47b-b76dc09359ed)
+![image](https://github.com/junidevs/clf-Next-Jotai-ShoppingProcess/assets/52135894/cdeb88b7-159b-4223-b8f7-c8760be30e54)
+
+
+
+
+
+
