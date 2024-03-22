@@ -59,7 +59,7 @@ Community and Ecosystem: While smaller than xState's, Jotai's growing community 
 
 ```bash
 In a nutshell, my feeling after a couple of hours with xState was similar to working with redux
- but without the immersion ( of course, in xState you can also use it ) but for me,
+ but without the IMMER ( of course, in xState you can also use it ) but for me,
   no longer paying attention to the bundle size xState would be the last choice in terms of Developer experience, etc.
    I would choose tanstack or redux-toolkit ( lighter and still more readable )
 
