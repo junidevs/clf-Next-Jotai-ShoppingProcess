@@ -9,7 +9,25 @@ declare global {
     bgUrl?: string
     avatarUrl?: string
     preDefBackground?: string
+    requireDispatch: boolean
   }
+  type TAddress = {
+    street: string
+    city: string
+    country: "Poland" | "USA"
+  }
+
+  type TShippingMap = {
+    [country in TAddress["country"]]: ShippingService
+  }
+
+  type TPaymentMap = {
+    [country in TAddress["country"]]: TPaymentMethods
+  }
+
+  type TShippingMethods = "UPS" | "INPOST"
+
+  type TPaymentMethods = "BLIK" | "VISA" | "CRYPTO"
 }
 
 export {}

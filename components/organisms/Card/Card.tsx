@@ -2,16 +2,26 @@ import Stack from "@mui/material/Stack"
 import Image from "next/image"
 import { Fade, Typography } from "@mui/material"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import useCheckoutAtom from "@/atoms/checkoutAtom/useCheckoutAtom"
 
-const Card = ({
-  name,
-  releaseDate,
-  price,
-  currency,
-  bgUrl,
-  avatarUrl,
-  preDefBackground,
-}: TProduct) => {
+const Card = (product: TProduct) => {
+  const { products, handleSetProduct } = useCheckoutAtom()
+  const {
+    id,
+    name,
+    releaseDate,
+    price,
+    currency,
+    bgUrl,
+    avatarUrl,
+    preDefBackground,
+  } = product
+  console.log({ products })
+  const handleAddToCard = () => {
+    handleSetProduct(product)
+  }
+
+  const productAdded = products.some(({ id: addedId }) => addedId === id)
   return (
     <Stack
       minWidth={"48%"}
@@ -45,7 +55,7 @@ const Card = ({
             fontSize: 12,
           }}
         >
-          {releaseDate}
+          {releaseDate}{" "}
         </Typography>
       </Stack>
       <Stack
@@ -102,18 +112,18 @@ const Card = ({
             alignItems: "center",
             justifyContent: "center",
             gap: 1,
-            backgroundColor: "#3DBDA7",
+            backgroundColor: productAdded ? "#969696" : "#3DBDA7",
             p: 1,
             borderRadius: 2,
             "&:hover": {
               cursor: "pointer",
             },
           }}
+          onClick={handleAddToCard}
         >
           <ShoppingCartIcon htmlColor="#fff" />
           <Typography sx={{ color: "#fff", fontSize: 16 }}>
-            {" "}
-            Add to card
+            {productAdded ? "Added" : "Add to card"}
           </Typography>
         </Stack>
       </Stack>
@@ -133,7 +143,7 @@ const Card = ({
         timeout={{ enter: 450, exit: 300 }}
         easing={{ enter: "linear", exit: "linear" }}
       >
-        <Stack position="absolute" bottom={10} right={0}>
+        <Stack position="absolute" bottom={0} right={0}>
           <Image alt="avatar" width={330} height={390} src={avatarUrl!} />
         </Stack>
       </Fade>

@@ -15,6 +15,7 @@ export const getProductsResponse: TProduct[] = [
     avatarUrl: "/assets/card/models/acModel.png",
     preDefBackground:
       "linear-gradient(90deg, rgba(6, 125, 113, 0.5) 0%, rgba(7, 27, 36, 1) 0%, rgba(250, 165, 37, 0.3) 80%)",
+    requireDispatch: true,
   },
   {
     id: 2,
@@ -26,5 +27,6 @@ export const getProductsResponse: TProduct[] = [
     avatarUrl: "/assets/card/models/gotModel.png",
     preDefBackground:
       "linear-gradient(90deg, rgba(6, 125, 113, 0.5) 0%, rgba(7, 27, 36, 1) 0%, rgba(250, 165, 37, 0.3) 80%)",
+    requireDispatch: false,
   },
 ]

@@ -1,3 +1,4 @@
+"use client"
 // eslint-disable-next-line import/no-unresolved
 import { setupWorker } from "msw/browser"
 

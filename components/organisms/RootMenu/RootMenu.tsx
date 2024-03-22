@@ -12,12 +12,14 @@ import {
 import Stack from "@mui/material/Stack"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import StoreIcon from "@mui/icons-material/Store"
+import useCheckoutAtom from "@/atoms/checkoutAtom/useCheckoutAtom"
 
 const RootMenu = () => {
   const settings = ["profile"]
   const router = useRouter()
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
-
+  const { products } = useCheckoutAtom()
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget)
   }
@@ -48,11 +50,18 @@ const RootMenu = () => {
             },
           }}
         >
-          CLF-SHOP
+          CLF - SHOP
         </Typography>
       </Stack>
 
-      <Stack>
+      <Stack flexDirection="row" gap={2}>
+        <Tooltip title="Go to checkout">
+          <IconButton onClick={() => router.push("/checkout")} sx={{ p: 0 }}>
+            <Badge color="secondary" badgeContent={products.length} max={999}>
+              <StoreIcon htmlColor="#fff" fontSize="large" />
+            </Badge>
+          </IconButton>
+        </Tooltip>
         <Tooltip title="Open menu">
           <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
             <Badge color="secondary" badgeContent={1000} max={999}>
